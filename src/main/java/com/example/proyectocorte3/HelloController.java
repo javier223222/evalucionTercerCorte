@@ -3,9 +3,7 @@ package com.example.proyectocorte3;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Random;
+import java.util.*;
 
 public class HelloController {
     @FXML
@@ -30,6 +28,13 @@ public class HelloController {
         }
         return codigo;
 
+    }
+
+
+    public static void ordenarBurbuja(){
+
+        List<UtilesEscoleres>util=new ArrayList<>(utilesEscolares.values());
+        Collections.sort(util);
     }
 
 }

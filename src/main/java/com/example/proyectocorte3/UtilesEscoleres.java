@@ -2,7 +2,7 @@ package com.example.proyectocorte3;
 
 import java.util.Objects;
 
-public class UtilesEscoleres {
+public class UtilesEscoleres implements Comparable<UtilesEscoleres> {
     private String nombre;
     private int cantidadAcomprar;
     private int cantidadComprada;
@@ -46,6 +46,8 @@ public class UtilesEscoleres {
                  "Cantidad comprada"+(cantidadAcomprar-cantidadComprada);
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -53,6 +55,7 @@ public class UtilesEscoleres {
         UtilesEscoleres that = (UtilesEscoleres) o;
         return nombre.equals(that.nombre);
     }
+
     public int obtenerDiferencia(){
         return cantidadAcomprar-cantidadComprada;
     }
@@ -61,5 +64,10 @@ public class UtilesEscoleres {
     @Override
     public int hashCode() {
         return Objects.hash(nombre);
+    }
+
+    @Override
+    public int compareTo(UtilesEscoleres o) {
+        return this.nombre.compareTo(o.nombre);
     }
 }
