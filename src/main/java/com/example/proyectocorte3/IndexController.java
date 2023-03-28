@@ -1,2 +1,4 @@
-package com.example.proyectocorte3;public class IndexController {
+package com.example.proyectocorte3;
+
+public class IndexController {
 }
