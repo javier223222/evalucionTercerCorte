@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectocorte3.IndexController">
    <children>
-      <TableView layoutX="271.0" layoutY="52.0" prefHeight="396.0" prefWidth="401.0">
+      <TableView fx:id="tablaElementos" layoutX="271.0" layoutY="52.0" prefHeight="396.0" prefWidth="401.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Descripcion" />
           <TableColumn prefWidth="75.0" text="Cant Comprada" />
@@ -26,7 +26,7 @@
             <Font name="Montserrat Regular" size="17.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="28.0" layoutY="88.0" prefHeight="33.0" prefWidth="213.0">
+      <TextField fx:id="inputDescripcion" alignment="CENTER" layoutX="28.0" layoutY="88.0" prefHeight="33.0" prefWidth="213.0">
          <font>
             <Font name="Montserrat Regular" size="16.0" />
          </font>
@@ -36,7 +36,7 @@
             <Font name="Montserrat Regular" size="17.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="28.0" layoutY="196.0" prefHeight="33.0" prefWidth="213.0">
+      <TextField fx:id="inputComprar" alignment="CENTER" layoutX="28.0" layoutY="196.0" prefHeight="33.0" prefWidth="213.0">
          <font>
             <Font name="Montserrat Regular" size="16.0" />
          </font>
@@ -46,7 +46,7 @@
             <Font name="Montserrat Regular" size="17.0" />
          </font>
       </Text>
-      <TextField alignment="CENTER" layoutX="28.0" layoutY="304.0" prefHeight="33.0" prefWidth="213.0">
+      <TextField fx:id="inputComprado" alignment="CENTER" layoutX="28.0" layoutY="304.0" prefHeight="33.0" prefWidth="213.0">
          <font>
             <Font name="Montserrat Regular" size="16.0" />
          </font>
