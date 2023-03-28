@@ -7,6 +7,7 @@ public class UtilesEscoleres implements Comparable<UtilesEscoleres> {
     private int cantidadAcomprar;
     private int cantidadComprada;
 
+
     public UtilesEscoleres(String nombre, int cantidadAcomprar) {
         this.nombre = nombre;
         this.cantidadAcomprar = cantidadAcomprar;
