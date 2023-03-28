@@ -11,10 +11,6 @@ public class HelloController {
    
     private static HashMap<String,UtilesEscoleres>utilesEscolares=new HashMap<String,UtilesEscoleres>();
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
     public String generarId(){
         String codigo="";
         int num=0;
@@ -27,12 +23,10 @@ public class HelloController {
             codigo=generarId();
         }
         return codigo;
-
     }
 
 
     public static void ordenarBurbuja(){
-
         List<UtilesEscoleres>util=new ArrayList<>(utilesEscolares.values());
         Collections.sort(util);
     }
