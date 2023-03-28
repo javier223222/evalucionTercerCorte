@@ -15,20 +15,7 @@ public class HelloController {
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
-    public String generarId(){
-        String codigo="";
-        int num=0;
-        Random random=new Random();
-        for (int i = 0; i < 4; i++) {
-            num+=random.nextInt(0,200);
-        }
-        codigo+=String.valueOf(num);
-        if (utilesEscolares.containsKey(codigo)){
-            codigo=generarId();
-        }
-        return codigo;
 
-    }
 
 
     public static void ordenarBurbuja(){
