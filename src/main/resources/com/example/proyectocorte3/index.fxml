@@ -1,8 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectocorte3.IndexController">
-
+   <children>
+      <TableView layoutX="271.0" layoutY="52.0" prefHeight="396.0" prefWidth="401.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Descripcion" />
+          <TableColumn prefWidth="75.0" text="Cant Comprada" />
+            <TableColumn prefWidth="75.0" text="Cant Necesaria" />
+            <TableColumn prefWidth="75.0" text="Cant Pendiente" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Text layoutX="28.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la Descripcion" wrappingWidth="213.13000106811523">
+         <font>
+            <Font name="Montserrat Regular" size="17.0" />
+         </font>
+      </Text>
+      <TextField alignment="CENTER" layoutX="28.0" layoutY="88.0" prefHeight="33.0" prefWidth="213.0">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </TextField>
+      <Text layoutX="28.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la cantidad a Comprar" wrappingWidth="213.13000106811523">
+         <font>
+            <Font name="Montserrat Regular" size="17.0" />
+         </font>
+      </Text>
+      <TextField alignment="CENTER" layoutX="28.0" layoutY="196.0" prefHeight="33.0" prefWidth="213.0">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </TextField>
+      <Text layoutX="28.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la cantidad Comprada" wrappingWidth="213.13000106811523">
+         <font>
+            <Font name="Montserrat Regular" size="17.0" />
+         </font>
+      </Text>
+      <TextField alignment="CENTER" layoutX="28.0" layoutY="304.0" prefHeight="33.0" prefWidth="213.0">
+         <font>
+            <Font name="Montserrat Regular" size="16.0" />
+         </font>
+      </TextField>
+   </children>
 </AnchorPane>
