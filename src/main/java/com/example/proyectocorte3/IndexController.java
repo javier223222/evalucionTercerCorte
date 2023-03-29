@@ -118,7 +118,11 @@ public class IndexController implements Initializable {
         if (controladorTabla!=null){
             inputDescripcion.setText(controladorTabla.getNombre());
             inputComprado.setVisible(true);
-
         }
+    }
+    public void ordenar(MouseEvent event) {
+        Inventario inventario = new Inventario();
+        inventario.ordenarBurbuja();
+        tablaElementos.setItems(obtenerDatos(inventario));
     }
 }

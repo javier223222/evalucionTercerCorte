@@ -4,8 +4,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class Inventario {
-
-   
     private static HashMap<String,UtilesEscoleres>utilesEscolares=new HashMap<String,UtilesEscoleres>();
 
     public  void ordenarBurbuja(){
@@ -17,8 +15,7 @@ public class Inventario {
                       Map.Entry::getValue,
                       (viejo,nuevo)->viejo,LinkedHashMap::new));
 
-             utilesEscolares= (HashMap<String, UtilesEscoleres>) resultado;
-
+             utilesEscolares = (HashMap<String, UtilesEscoleres>) resultado;
     }
 
 
