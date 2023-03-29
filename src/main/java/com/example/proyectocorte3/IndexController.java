@@ -68,14 +68,20 @@ public class IndexController implements Initializable {
 
     public void agregar(MouseEvent mouseEvent) {
         try {
-            String describicon = inputDescripcion.getText();
-
-            int inputcantidad2 = Integer.parseInt(inputComprar.getText());
-            UtilesEscoleres utiiles = new UtilesEscoleres(describicon, inputcantidad2);
-
-            Inventario inventario = new Inventario();
-            inventario.agregarProducto(utiiles);
-            System.out.println(inventario.getUtilesEscolares().size());
+            String descripcion = inputDescripcion.getText();
+            int cantComprar = Integer.parseInt(inputComprar.getText());
+            if (descripcion.isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("Error rellene todos los campos");
+                alert.showAndWait();
+            } else {
+                UtilesEscoleres utiles = new UtilesEscoleres(descripcion, cantComprar);
+                Inventario inventario = new Inventario();
+                inventario.agregarProducto(utiles);
+                System.out.println(inventario.getUtilesEscolares().size());
+            }
         } catch (Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);

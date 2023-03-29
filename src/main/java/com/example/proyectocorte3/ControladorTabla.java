@@ -1,7 +1,11 @@
 package com.example.proyectocorte3;
 
 public class ControladorTabla {
-    private Inventario inventario;
+    private String nombre;
+    private int cantComprada;
+    private int cantNecesaria;
+    private int cantPendiennte;
+
 
 
 
