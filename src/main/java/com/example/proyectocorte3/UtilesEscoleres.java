@@ -1,5 +1,4 @@
 package com.example.proyectocorte3;
-
 import java.util.Objects;
 
 public class UtilesEscoleres implements Comparable<UtilesEscoleres> {

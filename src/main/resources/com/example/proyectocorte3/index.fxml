@@ -12,12 +12,12 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectocorte3.IndexController">
    <children>
-      <TableView fx:id="tablaElementos" layoutX="272.0" layoutY="51.0" prefHeight="373.0" prefWidth="401.0">
+      <TableView fx:id="tablaElementos" layoutX="272.0" layoutY="51.0" prefHeight="373.0" prefWidth="401.0" visible="false">
         <columns>
-          <TableColumn prefWidth="75.0" text="Descripcion" />
-          <TableColumn prefWidth="75.0" text="Cant Comprada" />
-            <TableColumn prefWidth="75.0" text="Cant Necesaria" />
-            <TableColumn prefWidth="75.0" text="Cant Pendiente" />
+          <TableColumn fx:id="descripcionCol" prefWidth="75.0" text="Descripcion" />
+          <TableColumn fx:id="cantCompradaCol" prefWidth="75.0" text="Cant Comprada" />
+            <TableColumn fx:id="cantNecesariaCol" prefWidth="75.0" text="Cant Necesaria" />
+            <TableColumn fx:id="cantPendCol" prefWidth="75.0" text="Cant Pendiente" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -53,23 +53,24 @@
             <Font name="Montserrat Regular" size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="anadirBtn" layoutX="28.0" layoutY="375.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: green;" />
-      <Button layoutX="105.0" layoutY="375.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange;" />
-      <Button layoutX="181.0" layoutY="375.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: red;" />
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="31.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="anadirBtn" layoutX="21.0" layoutY="376.0" mnemonicParsing="false" onAction="#agregarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: green;" />
+      <Button layoutX="82.0" layoutY="377.0" mnemonicParsing="false" onAction="#modificarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange;" visible="false" />
+      <Button layoutX="141.0" layoutY="377.0" mnemonicParsing="false" onAction="#eliminarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: red;" visible="false" />
+      <ImageView disable="true" fitHeight="40.0" fitWidth="40.0" layoutX="24.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/add-circle.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="109.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="37.0" fitWidth="37.0" layoutX="86.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@Images/edit-icon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="185.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="37.0" fitWidth="37.0" layoutX="145.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@Images/delete-icon.png" />
          </image>
       </ImageView>
+      <Button layoutX="200.0" layoutY="377.0" mnemonicParsing="false" onAction="#eliminarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #0022cd;" />
    </children>
 </AnchorPane>
