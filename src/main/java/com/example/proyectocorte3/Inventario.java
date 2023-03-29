@@ -21,15 +21,9 @@ public class Inventario {
 
     }
 
-    public static void main(String[] args) {
-        utilesEscolares.put("fdddd",new UtilesEscoleres("pepe",12));
-        utilesEscolares.put("aaaa",new UtilesEscoleres("angel",55));
-          ordenarBurbuja();
 
-        System.out.println(utilesEscolares.toString());
-    }
 
-    public static void agregarProducto(UtilesEscoleres utilesEscoleres2) {
+    public  void agregarProducto(UtilesEscoleres utilesEscoleres2) {
         utilesEscolares.put(utilesEscoleres2.getNombre(), utilesEscoleres2);
     }
 
