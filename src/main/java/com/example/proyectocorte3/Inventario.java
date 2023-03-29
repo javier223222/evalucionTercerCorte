@@ -14,7 +14,7 @@ public class Inventario {
         Collections.sort(util);
     }
     public void agrgearProducti(UtilesEscoleres utilesEscoleres2){
-        utilesEscolares.put(utilesEscoleres2.getNombre(),utilesEscoleres2);
+        utilesEscolares.put(utilesEscoleres2.getNombre().toLowerCase(),utilesEscoleres2);
     }
 
     public  HashMap<String, UtilesEscoleres> getUtilesEscolares() {
