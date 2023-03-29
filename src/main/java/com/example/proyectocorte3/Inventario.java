@@ -8,7 +8,7 @@ public class Inventario {
    
     private static HashMap<String,UtilesEscoleres>utilesEscolares=new HashMap<String,UtilesEscoleres>();
 
-    public static void ordenarBurbuja(){
+    public  void ordenarBurbuja(){
       Map<String,UtilesEscoleres>resultado=utilesEscolares.entrySet()
               .stream()
               .sorted(Map.Entry.comparingByValue())
