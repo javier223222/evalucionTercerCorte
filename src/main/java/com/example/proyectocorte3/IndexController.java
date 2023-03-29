@@ -1,18 +1,15 @@
 package com.example.proyectocorte3;
 
-<<<<<<< HEAD
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-=======
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
->>>>>>> 2483497d56908f80af0763e4e31a92ee0492ef44
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -28,17 +25,20 @@ public class IndexController implements Initializable {
     public TextField inputComprar;
     public TextField inputComprado;
     public Button anadirBtn;
-<<<<<<< HEAD
-    public TableColumn descripcionCol;
-    public TableColumn cantCompradaCol;
-    public TableColumn cantNecesariaCol;
-    public TableColumn cantPendCol;
+
+    /// HEAD
+    public TableColumn<ControladorTabla, String> descripcionCol;
+    public TableColumn<ControladorTabla, Integer> cantCompradaCol;
+    public TableColumn<ControladorTabla, Integer> cantNecesariaCol;
+    public TableColumn<ControladorTabla, Integer> cantPendCol;
+    public Text cantidaComprada;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.tipoPCol.setCellValueFactory(new PropertyValueFactory<>("tipoPaquete"));
-        this.costoCol.setCellValueFactory(new PropertyValueFactory<>("costo"));
-        this.mensualidadCol.setCellValueFactory(new PropertyValueFactory<>("mensualidad"));
+        this.descripcionCol.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        this.cantCompradaCol.setCellValueFactory(new PropertyValueFactory<>("cantComprada"));
+        this.cantNecesariaCol.setCellValueFactory(new PropertyValueFactory<>("cantNecesaria"));
+        this.cantPendCol.setCellValueFactory(new PropertyValueFactory<>("cantPendiente"));
     }
 
     public void agregarElemento(ActionEvent event) {
@@ -55,37 +55,34 @@ public class IndexController implements Initializable {
     }
 
     public void eliminarElemento(ActionEvent event) {
-=======
-    public Text cantidaComprada;
-    private ControladorTabla controladorTabla;
+        Text cantidaComprada;
+        ControladorTabla controladorTabla;
+    }
+
     @FXML
-    public void initialize() {
+    public void initialize () {
         inputComprado.setVisible(false);
         cantidaComprada.setVisible(false);
     }
 
 
+        public void agregar(MouseEvent mouseEvent){
+            try {
+                String describicon = inputDescripcion.getText();
 
-    public void agregar(MouseEvent mouseEvent) {
-      try {
-          String describicon=inputDescripcion.getText();
+                int inputcantidad2 = Integer.parseInt(inputComprar.getText());
+                UtilesEscoleres utiiles = new UtilesEscoleres(describicon, inputcantidad2);
 
-          int inputcantidad2=Integer.parseInt(inputComprar.getText());
-          UtilesEscoleres utiiles=new UtilesEscoleres(describicon,inputcantidad2);
-
-          Inventario inventario=new Inventario();
-          inventario.agrgearProducti(utiiles);
-          System.out.println(inventario.getUtilesEscolares().size());
-
-
-
-      }catch (Exception e) {
-          Alert alert = new Alert(Alert.AlertType.ERROR);
-          alert.setHeaderText(null);
-          alert.setTitle("Error");
-          alert.setContentText("Error ingrese un numero");
-          alert.showAndWait();
-      }
->>>>>>> 2483497d56908f80af0763e4e31a92ee0492ef44
+                Inventario inventario = new Inventario();
+                inventario.agregarProducto(utiiles);
+                System.out.println(inventario.getUtilesEscolares().size());
+            } catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setTitle("Error");
+                alert.setContentText("Error ingrese un numero");
+                alert.showAndWait();
+            }
+        }
     }
 }

@@ -48,17 +48,11 @@
             <Font name="Montserrat Regular" size="16.0" />
          </font>
       </TextField>
-<<<<<<< HEAD
       <Button fx:id="anadirBtn" layoutX="21.0" layoutY="376.0" mnemonicParsing="false" onAction="#agregarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: green;" />
       <Button layoutX="82.0" layoutY="377.0" mnemonicParsing="false" onAction="#modificarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange;" visible="false" />
       <Button layoutX="141.0" layoutY="377.0" mnemonicParsing="false" onAction="#eliminarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: red;" visible="false" />
-      <ImageView disable="true" fitHeight="40.0" fitWidth="40.0" layoutX="24.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
-=======
-      <Button fx:id="anadirBtn" layoutX="28.0" layoutY="375.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: green;" />
-      <Button layoutX="105.0" layoutY="375.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange;" />
-      <Button layoutX="181.0" layoutY="375.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: red;" />
+      <ImageView disable="true" fitHeight="40.0" fitWidth="40.0" layoutX="24.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true"/>
       <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="31.0" layoutY="378.0" onMouseClicked="#agregar" pickOnBounds="true" preserveRatio="true">
->>>>>>> 2483497d56908f80af0763e4e31a92ee0492ef44
          <image>
             <Image url="@Images/add-circle.png" />
          </image>
