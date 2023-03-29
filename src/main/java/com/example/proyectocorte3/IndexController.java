@@ -60,29 +60,28 @@ public class IndexController implements Initializable {
     }
 
     @FXML
-    public void initialize () {
+    public void initialize() {
         inputComprado.setVisible(false);
         cantidaComprada.setVisible(false);
     }
 
 
-        public void agregar(MouseEvent mouseEvent){
-            try {
-                String describicon = inputDescripcion.getText();
+    public void agregar(MouseEvent mouseEvent) {
+        try {
+            String describicon = inputDescripcion.getText();
 
-                int inputcantidad2 = Integer.parseInt(inputComprar.getText());
-                UtilesEscoleres utiiles = new UtilesEscoleres(describicon, inputcantidad2);
+            int inputcantidad2 = Integer.parseInt(inputComprar.getText());
+            UtilesEscoleres utiiles = new UtilesEscoleres(describicon, inputcantidad2);
 
-                Inventario inventario = new Inventario();
-                inventario.agregarProducto(utiiles);
-                System.out.println(inventario.getUtilesEscolares().size());
-            } catch (Exception e) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText(null);
-                alert.setTitle("Error");
-                alert.setContentText("Error ingrese un numero");
-                alert.showAndWait();
-            }
+            Inventario inventario = new Inventario();
+            inventario.agregarProducto(utiiles);
+            System.out.println(inventario.getUtilesEscolares().size());
+        } catch (Exception e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setTitle("Error");
+            alert.setContentText("Error ingrese un numero");
+            alert.showAndWait();
         }
     }
 }
