@@ -23,7 +23,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Text layoutX="28.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la Descripcion" wrappingWidth="213.13000106811523">
+      <Text layoutX="28.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingrese la Descripcion" wrappingWidth="213.13000106811523" onMouseClicked="#seleccionar">
          <font>
             <Font name="Montserrat Regular" size="17.0" />
          </font>
@@ -56,7 +56,7 @@
       <Button fx:id="anadirBtn" layoutX="21.0" layoutY="376.0" mnemonicParsing="false" onMouseClicked="#agregar" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: green;" />
       <Button fx:id="modificarBtn" layoutX="82.0" layoutY="377.0" mnemonicParsing="false" onAction="#modificarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange;" visible="false" />
       <Button fx:id="eliminarBtn" layoutX="141.0" layoutY="377.0" mnemonicParsing="false" onAction="#eliminarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: red;" visible="false" />
-      <ImageView disable="true" fitHeight="40.0" fitWidth="40.0" layoutX="24.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView disable="true" fitHeight="40.0" fitWidth="40.0" layoutX="24.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#modificarElemento">
          <image>
             <Image url="@Images/add-circle.png" />
          </image>

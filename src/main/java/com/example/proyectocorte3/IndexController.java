@@ -112,4 +112,13 @@ public class IndexController implements Initializable {
         }
         return lista;
     }
+
+    public void seleccionar(MouseEvent mouseEvent) {
+        ControladorTabla controladorTabla=tablaElementos.getSelectionModel().getSelectedItem();
+        if (controladorTabla!=null){
+            inputDescripcion.setText(controladorTabla.getNombre());
+            inputComprado.setVisible(true);
+
+        }
+    }
 }

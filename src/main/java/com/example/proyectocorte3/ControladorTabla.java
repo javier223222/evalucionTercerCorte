@@ -6,6 +6,7 @@ public class ControladorTabla {
     private int cantNecesaria;
     private int cantPendiente;
 
+
     public ControladorTabla(String nombre, int cantComprada, int cantNecesaria, int cantPendiente) {
         this.nombre = nombre;
         this.cantComprada = cantComprada;

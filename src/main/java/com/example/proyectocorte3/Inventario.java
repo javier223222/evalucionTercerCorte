@@ -1,15 +1,32 @@
 package com.example.proyectocorte3;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Inventario {
 
    
     private static HashMap<String,UtilesEscoleres>utilesEscolares=new HashMap<String,UtilesEscoleres>();
 
-    public void ordenarBurbuja(){
-        List<UtilesEscoleres>util=new ArrayList<>(utilesEscolares.values());
-        Collections.sort(util);
+    public static void ordenarBurbuja(){
+      Map<String,UtilesEscoleres>resultado=utilesEscolares.entrySet()
+              .stream()
+              .sorted(Map.Entry.comparingByValue())
+              .collect(Collectors.toMap(
+                      Map.Entry::getKey,
+                      Map.Entry::getValue,
+                      (viejo,nuevo)->viejo,LinkedHashMap::new));
+
+             utilesEscolares= (HashMap<String, UtilesEscoleres>) resultado;
+
+    }
+
+    public static void main(String[] args) {
+        utilesEscolares.put("fdddd",new UtilesEscoleres("pepe",12));
+        utilesEscolares.put("aaaa",new UtilesEscoleres("angel",55));
+          ordenarBurbuja();
+
+        System.out.println(utilesEscolares.toString());
     }
 
     public static void agregarProducto(UtilesEscoleres utilesEscoleres2) {
