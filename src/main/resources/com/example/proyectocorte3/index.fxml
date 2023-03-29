@@ -53,26 +53,26 @@
             <Font name="Montserrat Regular" size="16.0" />
          </font>
       </TextField>
-      <Button fx:id="anadirBtn" layoutX="21.0" layoutY="376.0" mnemonicParsing="false" onAction="#agregarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: green;" />
-      <Button layoutX="82.0" layoutY="377.0" mnemonicParsing="false" onAction="#modificarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange;" visible="false" />
-      <Button layoutX="141.0" layoutY="377.0" mnemonicParsing="false" onAction="#eliminarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: red;" visible="false" />
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="24.0" layoutY="379.0" onMouseClicked="#agregar" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="anadirBtn" layoutX="21.0" layoutY="376.0" mnemonicParsing="false" onMouseClicked="#agregar" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: green;" />
+      <Button fx:id="modificarBtn" layoutX="82.0" layoutY="377.0" mnemonicParsing="false" onAction="#modificarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: orange;" visible="false" />
+      <Button fx:id="eliminarBtn" layoutX="141.0" layoutY="377.0" mnemonicParsing="false" onAction="#eliminarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: red;" visible="false" />
+      <ImageView disable="true" fitHeight="40.0" fitWidth="40.0" layoutX="24.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/add-circle.png" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="37.0" fitWidth="37.0" layoutX="86.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="modificarImg" disable="true" fitHeight="37.0" fitWidth="37.0" layoutX="86.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@Images/edit-icon.png" />
          </image>
       </ImageView>
-      <ImageView disable="true" fitHeight="37.0" fitWidth="37.0" layoutX="145.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="eliminarImg" disable="true" fitHeight="37.0" fitWidth="37.0" layoutX="145.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@Images/delete-icon.png" />
          </image>
       </ImageView>
-      <Button layoutX="200.0" layoutY="377.0" mnemonicParsing="false" onAction="#eliminarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #0022cd;" />
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="203.0" layoutY="380.0" onMouseClicked="#agregar" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="ordenarBtn" layoutX="200.0" layoutY="377.0" mnemonicParsing="false" onAction="#eliminarElemento" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #0022cd;" visible="false" />
+      <ImageView fx:id="ordenarImg" disable="true" fitHeight="40.0" fitWidth="40.0" layoutX="203.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@Images/order.png" />
          </image>

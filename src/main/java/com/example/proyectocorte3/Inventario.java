@@ -16,7 +16,7 @@ public class Inventario {
         utilesEscolares.put(utilesEscoleres2.getNombre(), utilesEscoleres2);
     }
 
-    public  HashMap<String, UtilesEscoleres> getUtilesEscolares() {
+    public HashMap<String, UtilesEscoleres> getUtilesEscolares() {
         return utilesEscolares;
     }
 

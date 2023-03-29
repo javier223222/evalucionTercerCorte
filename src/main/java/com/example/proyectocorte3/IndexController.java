@@ -1,23 +1,22 @@
 package com.example.proyectocorte3;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
 import java.net.URL;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class IndexController implements Initializable {
     public TableView<ControladorTabla> tablaElementos;
@@ -32,6 +31,13 @@ public class IndexController implements Initializable {
     public TableColumn<ControladorTabla, Integer> cantNecesariaCol;
     public TableColumn<ControladorTabla, Integer> cantPendCol;
     public Text cantidaComprada;
+    public Button modificarBtn;
+    public Button eliminarBtn;
+    public ImageView modificarImg;
+    public ImageView eliminarImg;
+    public Button ordenarBtn;
+    public ImageView ordenarImg;
+    public Text cantCompradaText;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -39,15 +45,6 @@ public class IndexController implements Initializable {
         this.cantCompradaCol.setCellValueFactory(new PropertyValueFactory<>("cantComprada"));
         this.cantNecesariaCol.setCellValueFactory(new PropertyValueFactory<>("cantNecesaria"));
         this.cantPendCol.setCellValueFactory(new PropertyValueFactory<>("cantPendiente"));
-    }
-
-    public void agregarElemento(ActionEvent event) {
-        String nombre = inputDescripcion.getText();
-        int cantidadAcomprar = Integer.parseInt(inputComprar.getText());
-        int cantidadComprada = Integer.parseInt(inputComprado.getText());
-
-        UtilesEscoleres util1 = new UtilesEscoleres(nombre, cantidadAcomprar);
-        Inventario.agregarProducto(util1);
     }
 
     public void modificarElemento(ActionEvent event) {
@@ -68,9 +65,9 @@ public class IndexController implements Initializable {
 
     public void agregar(MouseEvent mouseEvent) {
         try {
-            String descripcion = inputDescripcion.getText();
+            String descripcion = inputDescripcion.getText().toUpperCase();
             int cantComprar = Integer.parseInt(inputComprar.getText());
-            if (descripcion.isEmpty()){
+            if (descripcion.isEmpty()) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);
                 alert.setTitle("Error");
@@ -80,6 +77,9 @@ public class IndexController implements Initializable {
                 UtilesEscoleres utiles = new UtilesEscoleres(descripcion, cantComprar);
                 Inventario inventario = new Inventario();
                 inventario.agregarProducto(utiles);
+
+                tablaElementos.setItems(obtenerDatos(inventario));
+                activarElementos();
                 System.out.println(inventario.getUtilesEscolares().size());
             }
         } catch (Exception e) {
@@ -89,5 +89,27 @@ public class IndexController implements Initializable {
             alert.setContentText("Error ingrese un numero");
             alert.showAndWait();
         }
+    }
+
+    private void activarElementos() {
+        tablaElementos.setVisible(true);
+        modificarBtn.setVisible(true);
+        modificarImg.setVisible(true);
+        eliminarBtn.setVisible(true);
+        eliminarImg.setVisible(true);
+        ordenarBtn.setVisible(true);
+        ordenarImg.setVisible(true);
+    }
+
+    private ObservableList<ControladorTabla> obtenerDatos(Inventario inventario) {
+        HashMap<String, UtilesEscoleres> listaUtiles = inventario.getUtilesEscolares();
+        ObservableList<ControladorTabla> lista = FXCollections.observableArrayList();
+
+        Set<String> keys = listaUtiles.keySet();
+        for (String key : keys) {
+            UtilesEscoleres valor = listaUtiles.get(key);
+            lista.add(new ControladorTabla(key, 0, valor.getCantidadAcomprar(), valor.getCantidadAcomprar()));
+        }
+        return lista;
     }
 }
